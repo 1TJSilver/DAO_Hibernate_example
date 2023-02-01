@@ -1,4 +1,0 @@
-databaseChangeLog:
-  -include:
-    file: migration/001_schema.sql
-    relativeToChange: true
