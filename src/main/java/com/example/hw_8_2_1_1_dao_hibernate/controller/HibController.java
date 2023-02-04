@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/persons")
@@ -16,7 +17,16 @@ public class HibController {
 
     @GetMapping("/by-city")
     public List<Person> personsByCity(@RequestParam("city") String city){
-        return service.getPersonsCity(city);
+        return service.findAllByCity_of_living(city);
+    }
+    @GetMapping("/by-lessAge")
+    public List<Person> findAllByAgeLessThan (@RequestParam("age") int age){
+        return service.findAllByAgeLessThan(age);
+    }
+    @GetMapping("/by-name-surname")
+    List<Optional<Person>> findAllByNameAndSurname (@RequestParam("name") String name,
+                                                    @RequestParam("surname") String surname){
+        return service.findAllByNameAndSurname(name, surname);
     }
 
 }
