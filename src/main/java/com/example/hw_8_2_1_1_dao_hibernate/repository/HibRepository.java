@@ -4,9 +4,10 @@ import com.example.hw_8_2_1_1_dao_hibernate.base.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class HibRepository {
     @PersistenceContext
     EntityManager entityManager;
