@@ -12,8 +12,11 @@ import java.util.Optional;
 
 @Repository
 public class HibRepository {
-    @Autowired
     PersonRepository repository;
+
+    public HibRepository(PersonRepository repository){
+        this.repository = repository;
+    }
 
     @Transactional
     public List<Person> findAllByCity_of_living(String city){

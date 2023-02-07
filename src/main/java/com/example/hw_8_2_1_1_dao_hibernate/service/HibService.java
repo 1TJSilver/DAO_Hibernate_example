@@ -11,6 +11,10 @@ import java.util.Optional;
 public class HibService {
     public HibRepository repository;
 
+    public HibService(HibRepository repository){
+        this.repository = repository;
+    }
+
     public List<Person> findAllByCity_of_living(String city){
         return repository.findAllByCity_of_living(city);
     }

@@ -14,6 +14,9 @@ import java.util.Optional;
 @RequestMapping("/persons")
 public class HibController {
     public HibService service;
+    public HibController (HibService service){
+        this.service = service;
+    }
 
     @GetMapping("/by-city")
     public List<Person> personsByCity(@RequestParam("city") String city){
