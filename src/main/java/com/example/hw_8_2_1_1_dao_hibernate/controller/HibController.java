@@ -14,6 +14,9 @@ import java.util.List;
 public class HibController {
     public HibService service;
 
+    public HibController(HibService service){
+        this.service = service;
+    }
     @GetMapping("/by-city")
     public List<Person> personsByCity(@RequestParam("city") String city){
         return service.getPersonsCity(city);

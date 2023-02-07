@@ -12,6 +12,8 @@ public class HibRepository {
     @PersistenceContext
     EntityManager entityManager;
 
+    public HibRepository(){}
+
     @Transactional
     public List<Person> getPersonsCity(String city){
         List<Person> result = entityManager.createQuery("select p from Person p where p.city_of_living = :city")

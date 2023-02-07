@@ -9,6 +9,10 @@ import java.util.List;
 public class HibService {
     public HibRepository repository;
 
+    public HibService(HibRepository repository){
+        this.repository = repository;
+    }
+
     public List<Person> getPersonsCity(String city){
         return repository.getPersonsCity(city);
     }
